@@ -1,0 +1,14 @@
+{
+  "name": "heimrichhannot/pdf-creator",
+  "type": "library",
+  "description": "A php pdf creating abstraction library.",
+  "license": "LGPL-3.0-or-later",
+  "require": {
+    "php": "^7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "HeimrichHannot\\PdfCreator\\": "PdfCreator/"
+    }
+  }
+}
