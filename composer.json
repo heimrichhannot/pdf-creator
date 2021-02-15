@@ -1,7 +1,7 @@
 {
   "name": "heimrichhannot/pdf-creator",
   "type": "library",
-  "description": "A php pdf creating abstraction library.",
+  "description": "PdfCreator is a high level API for PDF file creating with PHP.",
   "license": "LGPL-3.0-or-later",
   "require": {
     "php": "^7.2"
