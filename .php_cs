@@ -11,7 +11,7 @@ EOF;
 $finder = PhpCsFixer\Finder::create()
     ->exclude('Resources')
     ->exclude('Fixtures')
-    ->in([__DIR__.'/src'])
+    ->in([__DIR__.'/PdfCreator'])
 ;
 
 return PhpCsFixer\Config::create()
