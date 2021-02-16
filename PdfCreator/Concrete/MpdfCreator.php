@@ -97,7 +97,7 @@ class MpdfCreator extends AbstractPdfCreator
 
         if ($this->getBeforeOutputPdfCallback()) {
             /** @var BeforeOutputPdfCallback $result */
-            $result = \call_user_func($this->getBeforeCreateInstanceCallback(), new BeforeOutputPdfCallback($pdf, [
+            $result = \call_user_func($this->getBeforeOutputPdfCallback(), new BeforeOutputPdfCallback($pdf, [
                 'name' => $filename,
                 'dest' => $outputMode,
             ]));
