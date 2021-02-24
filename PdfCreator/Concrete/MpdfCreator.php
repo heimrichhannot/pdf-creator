@@ -8,6 +8,7 @@
 
 namespace HeimrichHannot\PdfCreator\Concrete;
 
+use Ausi\SlugGenerator\SlugGenerator;
 use HeimrichHannot\PdfCreator\AbstractPdfCreator;
 use HeimrichHannot\PdfCreator\BeforeCreateLibraryInstanceCallback;
 use HeimrichHannot\PdfCreator\BeforeOutputPdfCallback;
@@ -188,6 +189,7 @@ class MpdfCreator extends AbstractPdfCreator
         if ($this->getFonts()) {
             $dirs = [];
             $families = [];
+            $slugGenerator = new SlugGenerator(['delimiter' => '']);
 
             foreach ($this->getFonts() as $font) {
                 $file = pathinfo($font['filepath']);
@@ -215,7 +217,7 @@ class MpdfCreator extends AbstractPdfCreator
 
                         break;
                 }
-                $families[$font['family']][$fontStyle] = $file['basename'];
+                $families[$slugGenerator->generate($font['family'])][$fontStyle] = $file['basename'];
             }
 
             $fontDirs = array_merge($fontDirs, array_unique($dirs));
