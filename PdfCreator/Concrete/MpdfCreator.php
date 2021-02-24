@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (c) 2020 Heimrich & Hannot GmbH
+ * Copyright (c) 2021 Heimrich & Hannot GmbH
  *
  * @license LGPL-3.0-or-later
  */
@@ -59,6 +59,10 @@ class MpdfCreator extends AbstractPdfCreator
         }
 
         $pdf = new Mpdf($config);
+
+        if ($this->getLogger()) {
+            $pdf->setLogger($this->getLogger());
+        }
 
         $this->applyTemplate($pdf);
 
@@ -138,7 +142,7 @@ class MpdfCreator extends AbstractPdfCreator
      */
     public function addFontDirectories(array $paths): self
     {
-        $defaultConfig = (new  ConfigVariables())->getDefaults();
+        $defaultConfig = (new ConfigVariables())->getDefaults();
         $fontDirs = $defaultConfig['fontDir'];
 
         foreach ($paths as $fontDir) {

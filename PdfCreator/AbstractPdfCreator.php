@@ -8,6 +8,8 @@
 
 namespace HeimrichHannot\PdfCreator;
 
+use Psr\Log\LoggerInterface;
+
 abstract class AbstractPdfCreator
 {
     const OUTPUT_MODE_DOWNLOAD = 'download';
@@ -62,6 +64,8 @@ abstract class AbstractPdfCreator
     protected $beforeCreateInstanceCallback;
     /** @var callable|null */
     protected $beforeOutputPdfCallback;
+    /** @var LoggerInterface|null */
+    protected $logger;
 
     /**
      * Return an unique type alias.
@@ -287,6 +291,21 @@ abstract class AbstractPdfCreator
     public function setBeforeOutputPdfCallback(?callable $beforeOutputPdfCallback): self
     {
         $this->beforeOutputPdfCallback = $beforeOutputPdfCallback;
+
+        return $this;
+    }
+
+    public function getLogger(): ?LoggerInterface
+    {
+        return $this->logger;
+    }
+
+    /**
+     * Add a logger to the pdf library, if supported.
+     */
+    public function setLogger(?LoggerInterface $logger): self
+    {
+        $this->logger = $logger;
 
         return $this;
     }
