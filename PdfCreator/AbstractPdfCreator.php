@@ -171,6 +171,8 @@ abstract class AbstractPdfCreator
     }
 
     /**
+     * Register a font file to the pdf. Should be ttf.
+     *
      * @param string $filepath Absolute filepath to the font file
      * @param string $family   Font family name
      * @param string $style    Font style (regular, italic, ...), see AbstractPdfCreator::FONT_STYLE constants

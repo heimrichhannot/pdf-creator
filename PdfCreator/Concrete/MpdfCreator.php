@@ -52,7 +52,9 @@ class MpdfCreator extends AbstractPdfCreator
 
         if ($this->getBeforeCreateInstanceCallback()) {
             /** @var BeforeCreateLibraryInstanceCallback $result */
-            $result = \call_user_func($this->getBeforeCreateInstanceCallback(), new BeforeCreateLibraryInstanceCallback(['config' => $config]));
+            $result = \call_user_func($this->getBeforeCreateInstanceCallback(), new BeforeCreateLibraryInstanceCallback(
+                static::getType(), ['config' => $config]
+            ));
 
             if ($result && isset($result->getConstructorParameters()['config'])) {
                 $config = $result->getConstructorParameters()['config'];
@@ -102,7 +104,7 @@ class MpdfCreator extends AbstractPdfCreator
 
         if ($this->getBeforeOutputPdfCallback()) {
             /** @var BeforeOutputPdfCallback $result */
-            $result = \call_user_func($this->getBeforeOutputPdfCallback(), new BeforeOutputPdfCallback($pdf, [
+            $result = \call_user_func($this->getBeforeOutputPdfCallback(), new BeforeOutputPdfCallback(static::getType(), $pdf, [
                 'name' => $filename,
                 'dest' => $outputMode,
             ]));
@@ -113,7 +115,7 @@ class MpdfCreator extends AbstractPdfCreator
                 }
 
                 if (isset($result->getOutputParameters()['dest'])) {
-                    $filename = $result->getOutputParameters()['dest'];
+                    $outputMode = $result->getOutputParameters()['dest'];
                 }
             }
         }
@@ -123,7 +125,12 @@ class MpdfCreator extends AbstractPdfCreator
 
     public function getSupportedOutputModes(): array
     {
-        return static::OUTPUT_MODES;
+        return [
+            self::OUTPUT_MODE_DOWNLOAD,
+            self::OUTPUT_MODE_FILE,
+            self::OUTPUT_MODE_INLINE,
+            self::OUTPUT_MODE_STRING,
+        ];
     }
 
     public static function getType(): string

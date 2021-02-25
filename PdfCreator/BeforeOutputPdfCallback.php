@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (c) 2020 Heimrich & Hannot GmbH
+ * Copyright (c) 2021 Heimrich & Hannot GmbH
  *
  * @license LGPL-3.0-or-later
  */
@@ -15,11 +15,21 @@ class BeforeOutputPdfCallback
      * @var array
      */
     protected $outputParameters;
+    /**
+     * @var string
+     */
+    protected $type;
 
-    public function __construct($libraryInstance, array $outputParameters = [])
+    public function __construct(string $type, $libraryInstance, array $outputParameters = [])
     {
         $this->libraryInstance = $libraryInstance;
         $this->outputParameters = $outputParameters;
+        $this->type = $type;
+    }
+
+    public function getType(): string
+    {
+        return $this->type;
     }
 
     /**
