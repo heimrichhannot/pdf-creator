@@ -8,10 +8,14 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
-      - name: Execute PHP Documentor
-        run: |
-          wget https://phpdoc.org/phpDocumentor.phar
-          phpDocumentor.phar -t build -d src/
+      - name: PhpDocumentor
+        uses: gpupo/actions-phpDocumentor@1.0
+        with:
+          dir: './build'
+#      - name: Execute PHP Documentor
+#        run: |
+#          wget https://phpdoc.org/phpDocumentor.phar
+#          phpDocumentor.phar -t build -d src/
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
