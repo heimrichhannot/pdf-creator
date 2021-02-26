@@ -7,20 +7,6 @@ PdfCreator is a high level API for PDF file creating with PHP. Its goal is to ma
 - supported libraries:
   - [mPDF](https://github.com/mpdf/mpdf)
   - [TCPDF](https://github.com/tecnickcom/TCPDF)
-  
-## Install
-
-We recommend installing this library with composer:
-
-    composer require heimrichhannot/pdf-creator
-
-You also need to install the pdf library, you want to use this bundle with:
-- mPDF
-  - `"mpdf/mpdf": "^8.0"`
-- TCPDF
-  - `"tecnickcom/tcpdf": "^6.3"`
-  - if you want to use master templates in TCPDF, you also need FPDI:    
-    `"setasign/fpdi": "^2.3"`
 
 ## Example
 
@@ -50,8 +36,17 @@ $pdf->setHtmlContent($this->compile())
 
 ### Install
 
-1. Install with composer (recommended) or download library
-1. Install the php library you want to use (for example mpdf)
+We recommend installing this library with composer:
+
+    composer require heimrichhannot/pdf-creator
+
+You also need to install the pdf library, you want to use this bundle with:
+- mPDF
+  - `"mpdf/mpdf": "^8.0"`
+- TCPDF
+  - `"tecnickcom/tcpdf": "^6.3"`
+  - if you want to use master templates in TCPDF, you also need FPDI:    
+    `"setasign/fpdi": "^2.3"`
 
 ### Use callback for custom adjustments
 
@@ -88,3 +83,7 @@ $pdf->setBeforeOutputPdfCallback(function (BeforeOutputPdfCallback $callbackData
 });
 
 ```
+
+## Documentation
+
+- [API Documentattion](https://heimrichhannot.github.io/pdf-creator/)

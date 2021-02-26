@@ -12,11 +12,6 @@ jobs:
         uses: gpupo/actions-phpDocumentor@1.0
         with:
           dir: './'
-#      - name: PhpDocumentor
-#        run: |
-#          wget https://phpdoc.org/phpDocumentor.phar
-#          chmod +x phpDocumentor.phar
-#          phpDocumentor.phar -t build -d src/
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
