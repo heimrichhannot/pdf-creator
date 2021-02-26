@@ -11,6 +11,11 @@ Search.appendIndex(
             "summary": "Return\u0020an\u0020unique\u0020type\u0020alias.",
             "url": "../classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#method_getType"
         },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003AisUsable\u0028\u0029",
+            "name": "isUsable",
+            "summary": "Check\u0020if\u0020all\u0020prerequisites\u0020for\u0020this\u0020bundle\u0020are\u0020fullfilled,\u0020typically\u0020check\u0020for\u0020installed\u0020libraries.",
+            "url": "../classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#method_isUsable"
+        },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003AgetHtmlContent\u0028\u0029",
             "name": "getHtmlContent",
             "summary": "",
@@ -366,10 +371,10 @@ Search.appendIndex(
             "summary": "",
             "url": "../classes/HeimrichHannot-PdfCreator-Concrete-MpdfCreator.html"
         },                {
-            "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\MpdfCreator\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "MpdfCreator\u0020constructor.",
-            "url": "../classes/HeimrichHannot-PdfCreator-Concrete-MpdfCreator.html#method___construct"
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\MpdfCreator\u003A\u003AisUsable\u0028\u0029",
+            "name": "isUsable",
+            "summary": "Check\u0020if\u0020all\u0020prerequisites\u0020for\u0020this\u0020bundle\u0020are\u0020fullfilled,\u0020typically\u0020check\u0020for\u0020installed\u0020libraries.",
+            "url": "../classes/HeimrichHannot-PdfCreator-Concrete-MpdfCreator.html#method_isUsable"
         },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\MpdfCreator\u003A\u003Arender\u0028\u0029",
             "name": "render",
@@ -416,15 +421,15 @@ Search.appendIndex(
             "summary": "",
             "url": "../classes/HeimrichHannot-PdfCreator-Concrete-TcpdfCreator.html"
         },                {
-            "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\TcpdfCreator\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "TcpdfCreator\u0020constructor.",
-            "url": "../classes/HeimrichHannot-PdfCreator-Concrete-TcpdfCreator.html#method___construct"
-        },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\TcpdfCreator\u003A\u003AgetType\u0028\u0029",
             "name": "getType",
             "summary": "Return\u0020an\u0020unique\u0020type\u0020alias.",
             "url": "../classes/HeimrichHannot-PdfCreator-Concrete-TcpdfCreator.html#method_getType"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\TcpdfCreator\u003A\u003AisUsable\u0028\u0029",
+            "name": "isUsable",
+            "summary": "Check\u0020if\u0020all\u0020prerequisites\u0020for\u0020this\u0020bundle\u0020are\u0020fullfilled,\u0020typically\u0020check\u0020for\u0020installed\u0020libraries.",
+            "url": "../classes/HeimrichHannot-PdfCreator-Concrete-TcpdfCreator.html#method_isUsable"
         },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\TcpdfCreator\u003A\u003Arender\u0028\u0029",
             "name": "render",
@@ -435,6 +440,36 @@ Search.appendIndex(
             "name": "getSupportedOutputModes",
             "summary": "",
             "url": "../classes/HeimrichHannot-PdfCreator-Concrete-TcpdfCreator.html#method_getSupportedOutputModes"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Exception\\MissingDependenciesException",
+            "name": "MissingDependenciesException",
+            "summary": "",
+            "url": "../classes/HeimrichHannot-PdfCreator-Exception-MissingDependenciesException.html"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Exception\\MissingDependenciesException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "../classes/HeimrichHannot-PdfCreator-Exception-MissingDependenciesException.html#method___construct"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Exception\\MissingDependenciesException\u003A\u003AgetType\u0028\u0029",
+            "name": "getType",
+            "summary": "",
+            "url": "../classes/HeimrichHannot-PdfCreator-Exception-MissingDependenciesException.html#method_getType"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Exception\\MissingDependenciesException\u003A\u003AgetDependencies\u0028\u0029",
+            "name": "getDependencies",
+            "summary": "",
+            "url": "../classes/HeimrichHannot-PdfCreator-Exception-MissingDependenciesException.html#method_getDependencies"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Exception\\MissingDependenciesException\u003A\u003A\u0024type",
+            "name": "type",
+            "summary": "",
+            "url": "../classes/HeimrichHannot-PdfCreator-Exception-MissingDependenciesException.html#property_type"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Exception\\MissingDependenciesException\u003A\u003A\u0024dependencies",
+            "name": "dependencies",
+            "summary": "",
+            "url": "../classes/HeimrichHannot-PdfCreator-Exception-MissingDependenciesException.html#property_dependencies"
         },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\PdfCreatorFactory",
             "name": "PdfCreatorFactory",
@@ -485,5 +520,10 @@ Search.appendIndex(
             "name": "Concrete",
             "summary": "",
             "url": "../namespaces/heimrichhannot-pdfcreator-concrete.html"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Exception",
+            "name": "Exception",
+            "summary": "",
+            "url": "../namespaces/heimrichhannot-pdfcreator-exception.html"
         }            ]
 );
