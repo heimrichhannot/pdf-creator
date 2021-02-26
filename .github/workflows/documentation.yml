@@ -1,9 +1,11 @@
-name: CI
+name: Documentation
 
-on: [ push ]
+on:
+  release:
+    types: [published, created, edited]
 
 jobs:
-  api-documentation:
+  PhpDocumentor:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
