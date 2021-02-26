@@ -12,6 +12,7 @@ use Ausi\SlugGenerator\SlugGenerator;
 use HeimrichHannot\PdfCreator\AbstractPdfCreator;
 use HeimrichHannot\PdfCreator\BeforeCreateLibraryInstanceCallback;
 use HeimrichHannot\PdfCreator\BeforeOutputPdfCallback;
+use HeimrichHannot\PdfCreator\Exception\MissingDependenciesException;
 use Mpdf\Config\ConfigVariables;
 use Mpdf\Config\FontVariables;
 use Mpdf\Mpdf;
@@ -24,22 +25,31 @@ class MpdfCreator extends AbstractPdfCreator
      */
     protected $legacyFontDirectoryConfig;
 
-    /**
-     * MpdfCreator constructor.
-     */
-    public function __construct()
+    public static function isUsable(bool $triggerExeption = false): bool
     {
         if (!class_exists('Mpdf\Mpdf')) {
-            throw new \Exception('The mPDF library could not be found and is required by this service. Please install it with "composer require mpdf/mpdf ^8.0".');
+            if ($triggerExeption) {
+                throw new MissingDependenciesException(static::getType(), ['"mpdf/mpdf": "^8.0"']);
+            }
+
+            return false;
         }
 
         if (version_compare(Mpdf::VERSION, '7.0') < 0 || version_compare(Mpdf::VERSION, 9) >= 0) {
-            throw new \Exception('Only mPDF library versions 7.x and 8.x are supported.');
+            if ($triggerExeption) {
+                throw new MissingDependenciesException(static::getType(), ['"mpdf/mpdf": "^7.0|^8.0"']);
+            }
+
+            return false;
         }
+
+        return true;
     }
 
     public function render(): void
     {
+        static::isUsable(true);
+
         $config = [];
 
         if ($this->getMediaType()) {

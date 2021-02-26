@@ -13,7 +13,7 @@ use HeimrichHannot\PdfCreator\Concrete\TcpdfCreator;
 
 class PdfCreatorFactory
 {
-    public static $types;
+    protected static $types;
 
     /**
      * Return supported pdf creator types.

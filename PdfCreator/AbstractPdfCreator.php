@@ -8,6 +8,7 @@
 
 namespace HeimrichHannot\PdfCreator;
 
+use HeimrichHannot\PdfCreator\Exception\MissingDependenciesException;
 use Psr\Log\LoggerInterface;
 
 abstract class AbstractPdfCreator
@@ -71,6 +72,13 @@ abstract class AbstractPdfCreator
      * Return an unique type alias.
      */
     abstract public static function getType(): string;
+
+    /**
+     * Check if all prerequisites for this bundle are fullfilled, typically check for installed libraries.
+     *
+     * @throws MissingDependenciesException
+     */
+    abstract public static function isUsable(bool $triggerExeption = false): bool;
 
     /**
      * @return mixed

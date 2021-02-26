@@ -11,28 +11,34 @@ namespace HeimrichHannot\PdfCreator\Concrete;
 use HeimrichHannot\PdfCreator\AbstractPdfCreator;
 use HeimrichHannot\PdfCreator\BeforeCreateLibraryInstanceCallback;
 use HeimrichHannot\PdfCreator\BeforeOutputPdfCallback;
+use HeimrichHannot\PdfCreator\Exception\MissingDependenciesException;
 use setasign\Fpdi\Tcpdf\Fpdi;
 use TCPDF;
 
 class TcpdfCreator extends AbstractPdfCreator
 {
-    /**
-     * TcpdfCreator constructor.
-     */
-    public function __construct()
-    {
-        if (!class_exists('TCPDF')) {
-            throw new \Exception('The TCPDF library could not be found and is required by this service. Please install it with "composer require tecnickcom/tcpdf ^6.3".');
-        }
-    }
-
     public static function getType(): string
     {
         return 'tcpdf';
     }
 
+    public static function isUsable(bool $triggerExeption = false): bool
+    {
+        if (!class_exists('TCPDF')) {
+            if ($triggerExeption) {
+                throw new MissingDependenciesException(static::getType(), ['"tecnickcom/tcpdf": "^6.3"']);
+            }
+
+            return false;
+        }
+
+        return true;
+    }
+
     public function render(): void
     {
+        static::isUsable(true);
+
         $orientation = '';
 
         if ($this->getOrientation()) {
