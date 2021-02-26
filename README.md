@@ -2,9 +2,25 @@
 
 PdfCreator is a high level API for PDF file creating with PHP. Its goal is to make usage of existing libraries easier and object-orientated.
 
-## Feature
+## Features
+
 - supported libraries:
-    - [mpdf](https://github.com/mpdf/mpdf)
+  - [mPDF](https://github.com/mpdf/mpdf)
+  - [TCPDF](https://github.com/tecnickcom/TCPDF)
+  
+## Install
+
+We recommend installing this library with composer:
+
+    composer require heimrichhannot/pdf-creator
+
+You also need to install the pdf library, you want to use this bundle with:
+- mPDF
+  - `"mpdf/mpdf": "^8.0"`
+- TCPDF
+  - `"tecnickcom/tcpdf": "^6.3"`
+  - if you want to use master templates in TCPDF, you also need FPDI:    
+    `"setasign/fpdi": "^2.3"`
 
 ## Example
 

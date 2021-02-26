@@ -11,9 +11,21 @@ namespace HeimrichHannot\PdfCreator\Concrete;
 use HeimrichHannot\PdfCreator\AbstractPdfCreator;
 use HeimrichHannot\PdfCreator\BeforeCreateLibraryInstanceCallback;
 use HeimrichHannot\PdfCreator\BeforeOutputPdfCallback;
+use setasign\Fpdi\Tcpdf\Fpdi;
+use TCPDF;
 
 class TcpdfCreator extends AbstractPdfCreator
 {
+    /**
+     * TcpdfCreator constructor.
+     */
+    public function __construct()
+    {
+        if (!class_exists('TCPDF')) {
+            throw new \Exception('The TCPDF library could not be found and is required by this service. Please install it with "composer require tecnickcom/tcpdf ^6.3".');
+        }
+    }
+
     public static function getType(): string
     {
         return 'tcpdf';
@@ -58,15 +70,27 @@ class TcpdfCreator extends AbstractPdfCreator
             }
         }
 
-        $pdf = new \TCPDF(
-            $constructorParams['orientation'],
-            $constructorParams['unit'],
-            $constructorParams['format'],
-            $constructorParams['unicode'],
-            $constructorParams['encoding'],
-            $constructorParams['diskcache'],
-            $constructorParams['pdfa']
-        );
+        if (class_exists('setasign\Fpdi\Tcpdf\Fpdi')) {
+            $pdf = new Fpdi(
+                $constructorParams['orientation'],
+                $constructorParams['unit'],
+                $constructorParams['format'],
+                $constructorParams['unicode'],
+                $constructorParams['encoding'],
+                $constructorParams['diskcache'],
+                $constructorParams['pdfa']
+            );
+        } else {
+            $pdf = new TCPDF(
+                $constructorParams['orientation'],
+                $constructorParams['unit'],
+                $constructorParams['format'],
+                $constructorParams['unicode'],
+                $constructorParams['encoding'],
+                $constructorParams['diskcache'],
+                $constructorParams['pdfa']
+            );
+        }
 
         // Prevent font subsetting (huge speed improvement)
         $pdf->setFontSubsetting(false);
@@ -74,6 +98,18 @@ class TcpdfCreator extends AbstractPdfCreator
         // Remove default header/footer
         $pdf->setPrintHeader(false);
         $pdf->setPrintFooter(false);
+
+        $masterTemplate = null;
+
+        if ('setasign\Fpdi\Tcpdf\Fpdi' == \get_class($pdf) && $this->getTemplateFilePath()) {
+            if (file_exists($this->getTemplateFilePath())) {
+                $pdf->setSourceFile($this->getTemplateFilePath());
+                $masterTemplate = $pdf->importPage(1);
+                $pdf->useImportedPage($masterTemplate, 10, 10, 100);
+            } else {
+                trigger_error('Pdf template does not exist.', E_USER_NOTICE);
+            }
+        }
 
         if ($this->getMargins()) {
             if ($this->getMargins()['top']) {
@@ -101,8 +137,6 @@ class TcpdfCreator extends AbstractPdfCreator
                 }
             }
         }
-
-//        $pdf->source
 
         $pdf->AddPage();
 
@@ -138,6 +172,17 @@ class TcpdfCreator extends AbstractPdfCreator
 
                 break;
         }
+
+        if ($masterTemplate) {
+            $pageCount = $pdf->getNumPages();
+
+            for ($i = 1; $i <= $pageCount; ++$i) {
+                $pdf->setPage($i);
+                $pdf->useTemplate($masterTemplate);
+            }
+        }
+
+        $pdf->lastPage();
 
         if ($this->getBeforeOutputPdfCallback()) {
             /** @var BeforeOutputPdfCallback $result */
