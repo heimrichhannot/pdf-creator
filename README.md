@@ -48,6 +48,9 @@ You also need to install the pdf library, you want to use this bundle with:
   - if you want to use master templates in TCPDF, you also need FPDI:    
     `"setasign/fpdi": "^2.3"`
 
+If you're using [Contao](https://contao.org/), you could try the [PDF Creator Bundle](https://github.com/heimrichhannot/contao-pdf-creator-bundle), which is based on this library.
+
+
 ### Use callback for custom adjustments
 
 Due the high level approach not all specific library functionality could be supported. To add specific configuration, you use the callback mechanism comes with this api.
@@ -86,4 +89,4 @@ $pdf->setBeforeOutputPdfCallback(function (BeforeOutputPdfCallback $callbackData
 
 ## Documentation
 
-- [API Documentattion](https://heimrichhannot.github.io/pdf-creator/)
+- [API Documentation](https://heimrichhannot.github.io/pdf-creator/)
