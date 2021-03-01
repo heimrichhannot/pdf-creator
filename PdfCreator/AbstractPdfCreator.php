@@ -98,6 +98,11 @@ abstract class AbstractPdfCreator
         return $this;
     }
 
+    /**
+     * Render the pdf file.
+     *
+     * @throw MissingDependenciesException
+     */
     abstract public function render(): void;
 
     /**

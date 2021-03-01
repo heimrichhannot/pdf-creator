@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [UNRELEASED] - 2021-03-01
+- enhanced code documentation
+
 ## [0.2.0] - 2021-02-26
 - added abstract isUsable methode to AbstractPdfCreator
 - added MissingDependenciesException
