@@ -5,15 +5,19 @@
         xmlns="https://www.phpdoc.org"
         xsi:noNamespaceSchemaLocation="https://docs.phpdoc.org/latest/phpdoc.xsd"
 >
+    <title>PDF Creator</title>
     <paths>
         <output>build/api</output>
         <cache>build/cache</cache>
     </paths>
-    <version number="3.0.0">
+    <version number="latest">
         <api>
             <source dsn=".">
                 <path>PdfCreator</path>
             </source>
+            <extensions>
+                <extension>php</extension>
+            </extensions>
         </api>
     </version>
 </phpdocumentor>
