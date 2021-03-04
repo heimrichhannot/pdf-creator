@@ -28,7 +28,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003Arender\u0028\u0029",
             "name": "render",
-            "summary": "",
+            "summary": "Render\u0020the\u0020pdf\u0020file.",
             "url": "../classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#method_render"
         },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003AgetFilename\u0028\u0029",
@@ -378,7 +378,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\MpdfCreator\u003A\u003Arender\u0028\u0029",
             "name": "render",
-            "summary": "",
+            "summary": "Render\u0020the\u0020pdf\u0020file.",
             "url": "../classes/HeimrichHannot-PdfCreator-Concrete-MpdfCreator.html#method_render"
         },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\MpdfCreator\u003A\u003AgetSupportedOutputModes\u0028\u0029",
@@ -433,7 +433,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\TcpdfCreator\u003A\u003Arender\u0028\u0029",
             "name": "render",
-            "summary": "",
+            "summary": "Render\u0020the\u0020pdf\u0020file.",
             "url": "../classes/HeimrichHannot-PdfCreator-Concrete-TcpdfCreator.html#method_render"
         },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\TcpdfCreator\u003A\u003AgetSupportedOutputModes\u0028\u0029",
