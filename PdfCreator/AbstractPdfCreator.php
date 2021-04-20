@@ -33,6 +33,11 @@ abstract class AbstractPdfCreator
     const ORIENTATION_LANDSCAPE = 'landscape';
     const ORIENTATION_PORTRAIT = 'portrait';
 
+    const SUPPORT_MASTERTEMPLATE = 'mastertemplate';
+    const SUPPORT_FONTS = 'fonts';
+    const SUPPORT_PSR_LOGGING = 'psr_logging';
+    const SUPPORT_MARGINS = 'margins';
+
     /**
      * @var string|null
      */
@@ -81,6 +86,26 @@ abstract class AbstractPdfCreator
     abstract public static function isUsable(bool $triggerExeption = false): bool;
 
     /**
+     * Output if the library supports specific features.
+     *
+     * @return string[]
+     */
+    public function supports(): array
+    {
+        return [
+            self::SUPPORT_FONTS,
+            self::SUPPORT_MASTERTEMPLATE,
+            self::SUPPORT_PSR_LOGGING,
+            self::SUPPORT_MARGINS,
+        ];
+    }
+
+    public function isSupported(string $feature): bool
+    {
+        return \in_array($feature, $this->supports());
+    }
+
+    /**
      * @return mixed
      */
     public function getHtmlContent(): ?string
@@ -101,9 +126,11 @@ abstract class AbstractPdfCreator
     /**
      * Render the pdf file.
      *
+     * @return string|void
+     *
      * @throw MissingDependenciesException
      */
-    abstract public function render(): void;
+    abstract public function render();
 
     /**
      * @return string
@@ -227,7 +254,10 @@ abstract class AbstractPdfCreator
         return $this;
     }
 
-    public function getFormat(): ?string
+    /**
+     * @return array|string|null
+     */
+    public function getFormat()
     {
         return $this->format;
     }

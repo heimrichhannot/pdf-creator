@@ -1,8 +1,14 @@
 # Changelog
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file.   
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [UNRELEASED] - 2021-03-01
+## [0.3.0] - 2021-04-20
+- added Dompdf support
+- added `AbstractPdfCreator::supports()` and `AbstractPdfCreator::isSupported()` method to check if a pdf creator supports a specific feature
+- [BC BREAK] removed void return type from abstract `AbstractPdfCreator::render()` method to support returning a pdf as string
+- removed return type from `AbstractPdfCreator::getFormat()` as it can also return an array
 - enhanced code documentation
+- fixed return values for string output for mpdf and tcpdf creator classes
 
 ## [0.2.0] - 2021-02-26
 - added abstract isUsable methode to AbstractPdfCreator

@@ -46,7 +46,12 @@ class MpdfCreator extends AbstractPdfCreator
         return true;
     }
 
-    public function render(): void
+    /**
+     * @throws MissingDependenciesException
+     *
+     * @return string|void
+     */
+    public function render()
     {
         static::isUsable(true);
 
@@ -130,6 +135,9 @@ class MpdfCreator extends AbstractPdfCreator
             }
         }
 
+        if (static::OUTPUT_MODE_STRING === $this->getOutputMode()) {
+            return $pdf->Output($filename, $outputMode);
+        }
         $pdf->Output($filename, $outputMode);
     }
 

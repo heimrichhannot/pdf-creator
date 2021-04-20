@@ -8,6 +8,7 @@
 
 namespace HeimrichHannot\PdfCreator;
 
+use HeimrichHannot\PdfCreator\Concrete\DompdfCreator;
 use HeimrichHannot\PdfCreator\Concrete\MpdfCreator;
 use HeimrichHannot\PdfCreator\Concrete\TcpdfCreator;
 
@@ -49,6 +50,7 @@ class PdfCreatorFactory
     {
         if (!static::$types) {
             static::$types = [
+                DompdfCreator::getType() => DompdfCreator::class,
                 MpdfCreator::getType() => MpdfCreator::class,
                 TcpdfCreator::getType() => TcpdfCreator::class,
             ];

@@ -35,7 +35,12 @@ class TcpdfCreator extends AbstractPdfCreator
         return true;
     }
 
-    public function render(): void
+    /**
+     * @throws MissingDependenciesException
+     *
+     * @return string|void
+     */
+    public function render()
     {
         static::isUsable(true);
 
@@ -208,7 +213,7 @@ class TcpdfCreator extends AbstractPdfCreator
             }
         }
 
-        $pdf->Output($filename, $outputMode);
+        return $pdf->Output($filename, $outputMode);
     }
 
     public function getSupportedOutputModes(): array
@@ -219,5 +224,19 @@ class TcpdfCreator extends AbstractPdfCreator
             self::OUTPUT_MODE_INLINE,
             self::OUTPUT_MODE_STRING,
         ];
+    }
+
+    public function supports(): array
+    {
+        $support = [
+            static::SUPPORT_FONTS,
+            static::SUPPORT_MARGINS,
+        ];
+
+        if (class_exists('setasign\Fpdi\Tcpdf\Fpdi')) {
+            $support[] = static::SUPPORT_MASTERTEMPLATE;
+        }
+
+        return $support;
     }
 }
