@@ -188,6 +188,34 @@
 </dt>
 <dd></dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#constant_SUPPORT_FONTS">SUPPORT_FONTS</a>
+    <span>
+        &nbsp;= &#039;fonts&#039;                    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#constant_SUPPORT_MARGINS">SUPPORT_MARGINS</a>
+    <span>
+        &nbsp;= &#039;margins&#039;                    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#constant_SUPPORT_MASTERTEMPLATE">SUPPORT_MASTERTEMPLATE</a>
+    <span>
+        &nbsp;= &#039;mastertemplate&#039;                    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#constant_SUPPORT_PSR_LOGGING">SUPPORT_PSR_LOGGING</a>
+    <span>
+        &nbsp;= &#039;psr_logging&#039;                    </span>
+</dt>
+<dd></dd>
+
                 <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#property_beforeCreateInstanceCallback">$beforeCreateInstanceCallback</a>
     <span>
@@ -324,7 +352,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#method_getFormat">getFormat()</a>
     <span>
-                        &nbsp;: string|null    </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;|string|null    </span>
 </dt>
 <dd></dd>
 
@@ -392,6 +420,13 @@
 <dd>Return an unique type alias.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#method_isSupported">isSupported()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/HeimrichHannot-PdfCreator-Concrete-TcpdfCreator.html#method_isUsable">isUsable()</a>
     <span>
                         &nbsp;: bool    </span>
@@ -401,7 +436,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/HeimrichHannot-PdfCreator-Concrete-TcpdfCreator.html#method_render">render()</a>
     <span>
-                        &nbsp;: void    </span>
+                        &nbsp;: string|void    </span>
 </dt>
 <dd>Render the pdf file.</dd>
 
@@ -495,6 +530,13 @@
                         &nbsp;: self    </span>
 </dt>
 <dd>Set the absolute path to a pdf template file.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/HeimrichHannot-PdfCreator-Concrete-TcpdfCreator.html#method_supports">supports()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Output if the library supports specific features.</dd>
 
         </dl>
 
@@ -781,6 +823,106 @@
     
 
 </article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_SUPPORT_FONTS">
+        SUPPORT_FONTS
+        <a href="classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#constant_SUPPORT_FONTS" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">37</span>
+</aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">SUPPORT_FONTS</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;fonts&#039;</span>
+</code>
+
+
+    
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_SUPPORT_MARGINS">
+        SUPPORT_MARGINS
+        <a href="classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#constant_SUPPORT_MARGINS" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">39</span>
+</aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">SUPPORT_MARGINS</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;margins&#039;</span>
+</code>
+
+
+    
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_SUPPORT_MASTERTEMPLATE">
+        SUPPORT_MASTERTEMPLATE
+        <a href="classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#constant_SUPPORT_MASTERTEMPLATE" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">36</span>
+</aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">SUPPORT_MASTERTEMPLATE</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;mastertemplate&#039;</span>
+</code>
+
+
+    
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_SUPPORT_PSR_LOGGING">
+        SUPPORT_PSR_LOGGING
+        <a href="classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#constant_SUPPORT_PSR_LOGGING" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">38</span>
+</aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">SUPPORT_PSR_LOGGING</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;psr_logging&#039;</span>
+</code>
+
+
+    
+    
+
+</article>
             </section>
 
         
@@ -805,7 +947,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 </aside>
 
     
@@ -836,7 +978,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 </aside>
 
     
@@ -867,7 +1009,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 </aside>
 
     
@@ -898,7 +1040,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 </aside>
 
     
@@ -929,7 +1071,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 </aside>
 
     
@@ -960,7 +1102,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 </aside>
 
     
@@ -991,7 +1133,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 </aside>
 
     
@@ -1022,7 +1164,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">74</span>
 </aside>
 
     
@@ -1053,7 +1195,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 </aside>
 
     
@@ -1084,7 +1226,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 </aside>
 
     
@@ -1115,7 +1257,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 </aside>
 
     
@@ -1146,7 +1288,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 </aside>
 
     
@@ -1177,7 +1319,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 </aside>
 
     
@@ -1212,7 +1354,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">196</span>
+    <span class="phpdocumentor-element-found-in__line">223</span>
 </aside>
 
         <p class="phpdocumentor-summary">Register a font file to the pdf. Should be ttf.</p>
@@ -1285,7 +1427,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">281</span>
+    <span class="phpdocumentor-element-found-in__line">311</span>
 </aside>
 
     
@@ -1317,7 +1459,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">297</span>
+    <span class="phpdocumentor-element-found-in__line">327</span>
 </aside>
 
     
@@ -1349,7 +1491,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">138</span>
 </aside>
 
     
@@ -1382,7 +1524,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">144</span>
+    <span class="phpdocumentor-element-found-in__line">171</span>
 </aside>
 
     
@@ -1414,7 +1556,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">174</span>
+    <span class="phpdocumentor-element-found-in__line">201</span>
 </aside>
 
     
@@ -1446,20 +1588,21 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">230</span>
+    <span class="phpdocumentor-element-found-in__line">260</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getFormat</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+                <span class="phpdocumentor-signature__name">getFormat</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|string|null</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string|null</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|string|null</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -1478,7 +1621,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">111</span>
 </aside>
 
     
@@ -1511,7 +1654,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">313</span>
+    <span class="phpdocumentor-element-found-in__line">343</span>
 </aside>
 
     
@@ -1543,7 +1686,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">208</span>
+    <span class="phpdocumentor-element-found-in__line">235</span>
 </aside>
 
     
@@ -1575,7 +1718,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">159</span>
+    <span class="phpdocumentor-element-found-in__line">186</span>
 </aside>
 
     
@@ -1607,7 +1750,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">249</span>
+    <span class="phpdocumentor-element-found-in__line">279</span>
 </aside>
 
     
@@ -1639,7 +1782,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">126</span>
+    <span class="phpdocumentor-element-found-in__line">153</span>
 </aside>
 
     
@@ -1672,7 +1815,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/Concrete/TcpdfCreator.php"><a href="files/pdfcreator-concrete-tcpdfcreator.html"><abbr title="PdfCreator/Concrete/TcpdfCreator.php">TcpdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">214</span>
+    <span class="phpdocumentor-element-found-in__line">219</span>
 </aside>
 
     
@@ -1704,7 +1847,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">264</span>
+    <span class="phpdocumentor-element-found-in__line">294</span>
 </aside>
 
     
@@ -1752,6 +1895,48 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isSupported">
+        isSupported()
+        <a href="classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#method_isSupported" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">103</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">isSupported</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$feature</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$feature</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -1814,22 +1999,37 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/Concrete/TcpdfCreator.php"><a href="files/pdfcreator-concrete-tcpdfcreator.html"><abbr title="PdfCreator/Concrete/TcpdfCreator.php">TcpdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 </aside>
 
         <p class="phpdocumentor-summary">Render the pdf file.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">render</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">render</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/HeimrichHannot-PdfCreator-Exception-MissingDependenciesException.html"><abbr title="\HeimrichHannot\PdfCreator\Exception\MissingDependenciesException">MissingDependenciesException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">string|void</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -1848,7 +2048,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">290</span>
+    <span class="phpdocumentor-element-found-in__line">320</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add an callback to modify constructor parameters for pdf library.</p>
@@ -1893,7 +2093,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">306</span>
+    <span class="phpdocumentor-element-found-in__line">336</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add an callback to modify the configuration or parameters before outputting the pdf file.</p>
@@ -1938,7 +2138,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">116</span>
+    <span class="phpdocumentor-element-found-in__line">143</span>
 </aside>
 
     
@@ -1980,7 +2180,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">152</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 </aside>
 
         <p class="phpdocumentor-summary">Absolute folder where to store pdf.</p>
@@ -2024,7 +2224,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">179</span>
+    <span class="phpdocumentor-element-found-in__line">206</span>
 </aside>
 
     
@@ -2066,7 +2266,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">242</span>
+    <span class="phpdocumentor-element-found-in__line">272</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set the document format.</p>
@@ -2112,7 +2312,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 </aside>
 
     
@@ -2156,7 +2356,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">321</span>
+    <span class="phpdocumentor-element-found-in__line">351</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add a logger to the pdf library, if supported.</p>
@@ -2200,7 +2400,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">218</span>
+    <span class="phpdocumentor-element-found-in__line">245</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set document margins.</p>
@@ -2265,7 +2465,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">167</span>
+    <span class="phpdocumentor-element-found-in__line">194</span>
 </aside>
 
     
@@ -2309,7 +2509,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">257</span>
+    <span class="phpdocumentor-element-found-in__line">287</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set orientation. Use AbstractPdfCreator::ORIENTATION_LANDSCAPE or AbstractPdfCreator::ORIENTATION_PORTRAIT.</p>
@@ -2353,7 +2553,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">131</span>
+    <span class="phpdocumentor-element-found-in__line">158</span>
 </aside>
 
     
@@ -2395,7 +2595,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/AbstractPdfCreator.php"><a href="files/pdfcreator-abstractpdfcreator.html"><abbr title="PdfCreator/AbstractPdfCreator.php">AbstractPdfCreator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">274</span>
+    <span class="phpdocumentor-element-found-in__line">304</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set the absolute path to a pdf template file.</p>
@@ -2422,6 +2622,40 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">self</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_supports">
+        supports()
+        <a href="classes/HeimrichHannot-PdfCreator-Concrete-TcpdfCreator.html#method_supports" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/Concrete/TcpdfCreator.php"><a href="files/pdfcreator-concrete-tcpdfcreator.html"><abbr title="PdfCreator/Concrete/TcpdfCreator.php">TcpdfCreator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">229</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Output if the library supports specific features.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">supports</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 

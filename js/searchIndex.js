@@ -16,6 +16,16 @@ Search.appendIndex(
             "summary": "Check\u0020if\u0020all\u0020prerequisites\u0020for\u0020this\u0020bundle\u0020are\u0020fullfilled,\u0020typically\u0020check\u0020for\u0020installed\u0020libraries.",
             "url": "classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#method_isUsable"
         },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003Asupports\u0028\u0029",
+            "name": "supports",
+            "summary": "Output\u0020if\u0020the\u0020library\u0020supports\u0020specific\u0020features.",
+            "url": "classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#method_supports"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003AisSupported\u0028\u0029",
+            "name": "isSupported",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#method_isSupported"
+        },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003AgetHtmlContent\u0028\u0029",
             "name": "getHtmlContent",
             "summary": "",
@@ -216,6 +226,26 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#constant_ORIENTATION_PORTRAIT"
         },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003ASUPPORT_MASTERTEMPLATE",
+            "name": "SUPPORT_MASTERTEMPLATE",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#constant_SUPPORT_MASTERTEMPLATE"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003ASUPPORT_FONTS",
+            "name": "SUPPORT_FONTS",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#constant_SUPPORT_FONTS"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003ASUPPORT_PSR_LOGGING",
+            "name": "SUPPORT_PSR_LOGGING",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#constant_SUPPORT_PSR_LOGGING"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003ASUPPORT_MARGINS",
+            "name": "SUPPORT_MARGINS",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#constant_SUPPORT_MARGINS"
+        },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003A\u0024htmlContent",
             "name": "htmlContent",
             "summary": "",
@@ -366,6 +396,36 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#property_type"
         },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\DompdfCreator",
+            "name": "DompdfCreator",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-Concrete-DompdfCreator.html"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\DompdfCreator\u003A\u003AgetType\u0028\u0029",
+            "name": "getType",
+            "summary": "Return\u0020an\u0020unique\u0020type\u0020alias.",
+            "url": "classes/HeimrichHannot-PdfCreator-Concrete-DompdfCreator.html#method_getType"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\DompdfCreator\u003A\u003AisUsable\u0028\u0029",
+            "name": "isUsable",
+            "summary": "Check\u0020if\u0020all\u0020prerequisites\u0020for\u0020this\u0020bundle\u0020are\u0020fullfilled,\u0020typically\u0020check\u0020for\u0020installed\u0020libraries.",
+            "url": "classes/HeimrichHannot-PdfCreator-Concrete-DompdfCreator.html#method_isUsable"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\DompdfCreator\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "Render\u0020the\u0020pdf\u0020file.",
+            "url": "classes/HeimrichHannot-PdfCreator-Concrete-DompdfCreator.html#method_render"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\DompdfCreator\u003A\u003AgetSupportedOutputModes\u0028\u0029",
+            "name": "getSupportedOutputModes",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-Concrete-DompdfCreator.html#method_getSupportedOutputModes"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\DompdfCreator\u003A\u003Asupports\u0028\u0029",
+            "name": "supports",
+            "summary": "Output\u0020if\u0020the\u0020library\u0020supports\u0020specific\u0020features.",
+            "url": "classes/HeimrichHannot-PdfCreator-Concrete-DompdfCreator.html#method_supports"
+        },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\MpdfCreator",
             "name": "MpdfCreator",
             "summary": "",
@@ -440,6 +500,11 @@ Search.appendIndex(
             "name": "getSupportedOutputModes",
             "summary": "",
             "url": "classes/HeimrichHannot-PdfCreator-Concrete-TcpdfCreator.html#method_getSupportedOutputModes"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\TcpdfCreator\u003A\u003Asupports\u0028\u0029",
+            "name": "supports",
+            "summary": "Output\u0020if\u0020the\u0020library\u0020supports\u0020specific\u0020features.",
+            "url": "classes/HeimrichHannot-PdfCreator-Concrete-TcpdfCreator.html#method_supports"
         },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\Exception\\MissingDependenciesException",
             "name": "MissingDependenciesException",
