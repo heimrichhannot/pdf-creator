@@ -86,19 +86,17 @@ class DompdfCreator extends AbstractPdfCreator
 
         $dompdf->setPaper($format, $orientation);
 
-        $dompdf->render();
-
         $filename = $this->getFilename();
-        $options = [];
+        $renderOptions = [];
 
         switch ($this->getOutputMode()) {
             case static::OUTPUT_MODE_DOWNLOAD:
-                $options = ['Attachment' => 1];
+                $renderOptions = ['Attachment' => 1];
 
                 break;
 
             case static::OUTPUT_MODE_INLINE:
-                $options = ['Attachment' => 0];
+                $renderOptions = ['Attachment' => 0];
 
                 break;
         }
@@ -107,7 +105,7 @@ class DompdfCreator extends AbstractPdfCreator
             /** @var BeforeOutputPdfCallback $result */
             $result = \call_user_func($this->getBeforeOutputPdfCallback(), new BeforeOutputPdfCallback(static::getType(), $dompdf, [
                 'filename' => $filename,
-                'options' => $options,
+                'options' => $renderOptions,
             ]));
 
             if ($result) {
@@ -116,20 +114,22 @@ class DompdfCreator extends AbstractPdfCreator
                 }
 
                 if (isset($result->getOutputParameters()['options']) && \is_array($result->getOutputParameters()['options'])) {
-                    $options = $result->getOutputParameters()['options'];
+                    $renderOptions = $result->getOutputParameters()['options'];
                 }
             }
         }
 
+        $dompdf->render();
+
         switch ($this->getOutputMode()) {
             case static::OUTPUT_MODE_DOWNLOAD:
             case static::OUTPUT_MODE_INLINE:
-                $dompdf->stream($filename, $options);
+                $dompdf->stream($filename, $renderOptions);
 
                 exit;
 
             case static::OUTPUT_MODE_STRING:
-                return $dompdf->output();
+                return $dompdf->output($renderOptions);
 
             case static::OUTPUT_MODE_FILE:
                 // @ToDo (https://ourcodeworld.com/articles/read/799/how-to-create-a-pdf-from-html-in-symfony-4-using-dompdf)
