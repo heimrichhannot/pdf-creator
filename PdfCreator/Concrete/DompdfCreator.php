@@ -227,6 +227,7 @@ class DompdfCreator extends AbstractPdfCreator
 
                 break;
         }
+        $filesystem->remove($tmpFilename);
 
         return $pdf->Output($this->getFilename(), $outputMode);
     }
