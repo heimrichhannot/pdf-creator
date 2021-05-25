@@ -171,6 +171,16 @@ Search.appendIndex(
             "summary": "Add\u0020a\u0020logger\u0020to\u0020the\u0020pdf\u0020library,\u0020if\u0020supported.",
             "url": "classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#method_setLogger"
         },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003AgetTempPath\u0028\u0029",
+            "name": "getTempPath",
+            "summary": "Get\u0020temp\u0020folder\u0020path.\u0020Default\u0020system\u0020tmp\u0020folder.",
+            "url": "classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#method_getTempPath"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003AsetTempPath\u0028\u0029",
+            "name": "setTempPath",
+            "summary": "Set\u0020a\u0020temp\u0020folder\u0020path.",
+            "url": "classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#method_setTempPath"
+        },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003AOUTPUT_MODE_DOWNLOAD",
             "name": "OUTPUT_MODE_DOWNLOAD",
             "summary": "",
@@ -311,6 +321,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#property_logger"
         },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\AbstractPdfCreator\u003A\u003A\u0024tmpPath",
+            "name": "tmpPath",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-AbstractPdfCreator.html#property_tmpPath"
+        },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\BeforeCreateLibraryInstanceCallback",
             "name": "BeforeCreateLibraryInstanceCallback",
             "summary": "",
@@ -425,6 +440,11 @@ Search.appendIndex(
             "name": "supports",
             "summary": "Output\u0020if\u0020the\u0020library\u0020supports\u0020specific\u0020features.",
             "url": "classes/HeimrichHannot-PdfCreator-Concrete-DompdfCreator.html#method_supports"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\DompdfCreator\u003A\u003AapplyMasterTemplate\u0028\u0029",
+            "name": "applyMasterTemplate",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-Concrete-DompdfCreator.html#method_applyMasterTemplate"
         },                {
             "fqsen": "\\HeimrichHannot\\PdfCreator\\Concrete\\MpdfCreator",
             "name": "MpdfCreator",
