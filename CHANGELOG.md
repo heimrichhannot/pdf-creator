@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [0.3.3-DEV] - 2021-05-25
 - added temp file cleanup to dompdf master template support
+- added missing symfony/filesystem dependency
 
 ## [0.3.2] - 2021-05-25
 - added methods to get and set temp path to AbstractPdfCreator
