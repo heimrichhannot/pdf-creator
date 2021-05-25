@@ -72,6 +72,8 @@ abstract class AbstractPdfCreator
     protected $beforeOutputPdfCallback;
     /** @var LoggerInterface|null */
     protected $logger;
+    /** @var string|null */
+    protected $tmpPath;
 
     /**
      * Return an unique type alias.
@@ -351,6 +353,28 @@ abstract class AbstractPdfCreator
     public function setLogger(?LoggerInterface $logger): self
     {
         $this->logger = $logger;
+
+        return $this;
+    }
+
+    /**
+     * Get temp folder path. Default system tmp folder.
+     */
+    public function getTempPath(): ?string
+    {
+        if (!$this->tmpPath) {
+            return sys_get_temp_dir();
+        }
+
+        return $this->tmpPath;
+    }
+
+    /**
+     * Set a temp folder path.
+     */
+    public function setTempPath(?string $tmpPath): self
+    {
+        $this->tmpPath = $tmpPath;
 
         return $this;
     }

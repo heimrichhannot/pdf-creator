@@ -15,6 +15,8 @@ use HeimrichHannot\PdfCreator\AbstractPdfCreator;
 use HeimrichHannot\PdfCreator\BeforeCreateLibraryInstanceCallback;
 use HeimrichHannot\PdfCreator\BeforeOutputPdfCallback;
 use HeimrichHannot\PdfCreator\Exception\MissingDependenciesException;
+use setasign\Fpdi\Tcpdf\Fpdi;
+use Symfony\Component\Filesystem\Filesystem;
 
 class DompdfCreator extends AbstractPdfCreator
 {
@@ -121,7 +123,15 @@ class DompdfCreator extends AbstractPdfCreator
 
         $dompdf->render();
 
+        if ($this->getTemplateFilePath() && class_exists('setasign\Fpdi\Tcpdf\Fpdi')) {
+            if (file_exists($this->getTemplateFilePath())) {
+                return $this->applyMasterTemplate($filename, $dompdf);
+            }
+            trigger_error('Pdf template does not exist.', E_USER_NOTICE);
+        }
+
         switch ($this->getOutputMode()) {
+            default:
             case static::OUTPUT_MODE_DOWNLOAD:
             case static::OUTPUT_MODE_INLINE:
                 $dompdf->stream($filename, $renderOptions);
@@ -133,6 +143,7 @@ class DompdfCreator extends AbstractPdfCreator
 
             case static::OUTPUT_MODE_FILE:
                 // @ToDo (https://ourcodeworld.com/articles/read/799/how-to-create-a-pdf-from-html-in-symfony-4-using-dompdf)
+                // should then also be covered in applyMasterTemplate
         }
     }
 
@@ -147,6 +158,76 @@ class DompdfCreator extends AbstractPdfCreator
 
     public function supports(): array
     {
-        return [];
+        $support = [];
+
+        if (class_exists('setasign\Fpdi\Tcpdf\Fpdi')) {
+            $support[] = static::SUPPORT_MASTERTEMPLATE;
+        }
+
+        return $support;
+    }
+
+    /**
+     * @param $filename
+     *
+     * @throws \setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException
+     * @throws \setasign\Fpdi\PdfParser\Filter\FilterException
+     * @throws \setasign\Fpdi\PdfParser\PdfParserException
+     * @throws \setasign\Fpdi\PdfParser\Type\PdfTypeException
+     * @throws \setasign\Fpdi\PdfReader\PdfReaderException
+     */
+    protected function applyMasterTemplate($filename, Dompdf $dompdf)
+    {
+        $filesystem = new Filesystem();
+
+        while (true) {
+            $tmpFilename = $this->getTempPath().'/dompdf/'.$filename.'_'.uniqid().'.pdf';
+
+            if (!$filesystem->exists($tmpFilename)) {
+                break;
+            }
+        }
+        $filesystem->dumpFile($tmpFilename, $dompdf->output());
+        $pdf = new Fpdi();
+        $pdf->setPrintHeader(false);
+        $pdf->setSourceFile($this->getTemplateFilePath());
+        $masterTemplate = $pdf->importPage(1);
+        $pageCount = $pdf->setSourceFile($tmpFilename);
+
+        for ($i = 1; $i <= $pageCount; ++$i) {
+            $pdf->AddPage();
+            $currentPage = $pdf->importPage($i);
+            $pdf->useTemplate($masterTemplate);
+            $pdf->useTemplate($currentPage);
+        }
+
+        switch ($this->getOutputMode()) {
+            case static::OUTPUT_MODE_STRING:
+                $outputMode = 'S';
+
+                break;
+
+//            case static::OUTPUT_MODE_FILE:
+//                if ($folder = $this->getFolder() && $this->getFilename()) {
+//                    $filename = rtrim($folder, \DIRECTORY_SEPARATOR).\DIRECTORY_SEPARATOR.$filename;
+//                }
+//
+//                $outputMode = 'F';
+//
+//                break;
+
+            case static::OUTPUT_MODE_DOWNLOAD:
+                $outputMode = 'D';
+
+                break;
+
+            default:
+            case static::OUTPUT_MODE_INLINE:
+                $outputMode = 'I';
+
+                break;
+        }
+
+        return $pdf->Output($this->getFilename(), $outputMode);
     }
 }

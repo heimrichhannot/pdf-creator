@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.   
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.2] - 2021-05-25
+- added methods to get and set temp path to AbstractPdfCreator
+- added master template support to dompdf (through fpdi with tcpdf)
+
 ## [0.3.1] - 2021-04-30
 - fixed dompdf render method callback before render callback
 - fixed variable naming in DompdfCreator
