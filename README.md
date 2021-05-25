@@ -44,12 +44,15 @@ We recommend installing this library with composer:
 You also need to install the pdf library, you want to use this bundle with:
 - Dompdf:
   - `"dompdf/dompdf": "^1.0"`
+  - if you want to use master templates in Dompdf, you also need FPDI and TCPDF:    
+    - `"tecnickcom/tcpdf": "^6.3"`
+    - `"setasign/fpdi": "^2.3"`
 - mPDF
-  - `"mpdf/mpdf": "^8.0"`
+  - `"mpdf/mpdf": "^8.0"` (version ^7.0 also supported)
 - TCPDF
   - `"tecnickcom/tcpdf": "^6.3"`
   - if you want to use master templates in TCPDF, you also need FPDI:    
-    `"setasign/fpdi": "^2.3"`
+    - `"setasign/fpdi": "^2.3"`
 
 If you're using [Contao](https://contao.org/), you could try the [PDF Creator Bundle](https://github.com/heimrichhannot/contao-pdf-creator-bundle), which is based on this library.
 
