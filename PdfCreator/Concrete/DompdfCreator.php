@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (c) 2021 Heimrich & Hannot GmbH
+ * Copyright (c) 2022 Heimrich & Hannot GmbH
  *
  * @license LGPL-3.0-or-later
  */
@@ -15,6 +15,7 @@ use HeimrichHannot\PdfCreator\AbstractPdfCreator;
 use HeimrichHannot\PdfCreator\BeforeCreateLibraryInstanceCallback;
 use HeimrichHannot\PdfCreator\BeforeOutputPdfCallback;
 use HeimrichHannot\PdfCreator\Exception\MissingDependenciesException;
+use HeimrichHannot\PdfCreator\PdfCreatorResult;
 use setasign\Fpdi\Tcpdf\Fpdi;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -38,7 +39,7 @@ class DompdfCreator extends AbstractPdfCreator
         return true;
     }
 
-    public function render()
+    public function render(): PdfCreatorResult
     {
         static::isUsable(true);
 
@@ -127,8 +128,10 @@ class DompdfCreator extends AbstractPdfCreator
             if (file_exists($this->getTemplateFilePath())) {
                 return $this->applyMasterTemplate($filename, $dompdf);
             }
-            trigger_error('Pdf template does not exist.', E_USER_NOTICE);
+            trigger_error('Pdf template does not exist.', \E_USER_NOTICE);
         }
+
+        $result = new PdfCreatorResult($this->getOutputMode());
 
         switch ($this->getOutputMode()) {
             default:
@@ -139,12 +142,15 @@ class DompdfCreator extends AbstractPdfCreator
                 exit;
 
             case static::OUTPUT_MODE_STRING:
-                return $dompdf->output($renderOptions);
+                $result->setFileContent($dompdf->output($renderOptions));
 
+                // no break
             case static::OUTPUT_MODE_FILE:
                 // @ToDo (https://ourcodeworld.com/articles/read/799/how-to-create-a-pdf-from-html-in-symfony-4-using-dompdf)
                 // should then also be covered in applyMasterTemplate
         }
+
+        return $result;
     }
 
     public function getSupportedOutputModes(): array

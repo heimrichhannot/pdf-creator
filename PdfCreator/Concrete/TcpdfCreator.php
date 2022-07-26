@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (c) 2021 Heimrich & Hannot GmbH
+ * Copyright (c) 2022 Heimrich & Hannot GmbH
  *
  * @license LGPL-3.0-or-later
  */
@@ -12,6 +12,7 @@ use HeimrichHannot\PdfCreator\AbstractPdfCreator;
 use HeimrichHannot\PdfCreator\BeforeCreateLibraryInstanceCallback;
 use HeimrichHannot\PdfCreator\BeforeOutputPdfCallback;
 use HeimrichHannot\PdfCreator\Exception\MissingDependenciesException;
+use HeimrichHannot\PdfCreator\PdfCreatorResult;
 use setasign\Fpdi\Tcpdf\Fpdi;
 use TCPDF;
 
@@ -40,7 +41,7 @@ class TcpdfCreator extends AbstractPdfCreator
      *
      * @return string|void
      */
-    public function render()
+    public function render(): PdfCreatorResult
     {
         static::isUsable(true);
 
@@ -73,11 +74,11 @@ class TcpdfCreator extends AbstractPdfCreator
         ];
 
         if ($this->getBeforeCreateInstanceCallback()) {
-            /** @var BeforeCreateLibraryInstanceCallback $result */
-            $result = \call_user_func($this->getBeforeCreateInstanceCallback(), new BeforeCreateLibraryInstanceCallback(static::getType(), $constructorParams));
+            /** @var BeforeCreateLibraryInstanceCallback $callback */
+            $callback = \call_user_func($this->getBeforeCreateInstanceCallback(), new BeforeCreateLibraryInstanceCallback(static::getType(), $constructorParams));
 
-            if ($result && \is_array($result->getConstructorParameters())) {
-                $constructorParams = array_merge($constructorParams, $result->getConstructorParameters());
+            if ($callback && \is_array($callback->getConstructorParameters())) {
+                $constructorParams = array_merge($constructorParams, $callback->getConstructorParameters());
             }
         }
 
@@ -118,7 +119,7 @@ class TcpdfCreator extends AbstractPdfCreator
                 $masterTemplate = $pdf->importPage(1);
                 $pdf->useImportedPage($masterTemplate, 10, 10, 100);
             } else {
-                trigger_error('Pdf template does not exist.', E_USER_NOTICE);
+                trigger_error('Pdf template does not exist.', \E_USER_NOTICE);
             }
         }
 
@@ -142,7 +143,7 @@ class TcpdfCreator extends AbstractPdfCreator
 
         if ($this->getFonts()) {
             foreach ($this->getFonts() as $font) {
-                if ('ttf' === pathinfo($font['filepath'], PATHINFO_EXTENSION)) {
+                if ('ttf' === pathinfo($font['filepath'], \PATHINFO_EXTENSION)) {
                     $filename = \TCPDF_FONTS::addTTFfont($font['filepath']);
                     $pdf->AddFont($filename);
                 }
@@ -165,7 +166,7 @@ class TcpdfCreator extends AbstractPdfCreator
                 break;
 
             case static::OUTPUT_MODE_FILE:
-                if ($folder = $this->getFolder() && $this->getFilename()) {
+                if (($folder = $this->getFolder()) && $this->getFilename()) {
                     $filename = rtrim($folder, \DIRECTORY_SEPARATOR).\DIRECTORY_SEPARATOR.$filename;
                 }
 
@@ -196,24 +197,42 @@ class TcpdfCreator extends AbstractPdfCreator
         $pdf->lastPage();
 
         if ($this->getBeforeOutputPdfCallback()) {
-            /** @var BeforeOutputPdfCallback $result */
-            $result = \call_user_func($this->getBeforeOutputPdfCallback(), new BeforeOutputPdfCallback(static::getType(), $pdf, [
+            /** @var BeforeOutputPdfCallback $callback */
+            $callback = \call_user_func($this->getBeforeOutputPdfCallback(), new BeforeOutputPdfCallback(static::getType(), $pdf, [
                 'name' => $filename,
                 'dest' => $outputMode,
             ]));
 
-            if ($result) {
-                if (isset($result->getOutputParameters()['name'])) {
-                    $filename = $result->getOutputParameters()['name'];
+            if ($callback) {
+                if (isset($callback->getOutputParameters()['name'])) {
+                    $filename = $callback->getOutputParameters()['name'];
                 }
 
-                if (isset($result->getOutputParameters()['dest'])) {
-                    $outputMode = $result->getOutputParameters()['dest'];
+                if (isset($callback->getOutputParameters()['dest'])) {
+                    $outputMode = $callback->getOutputParameters()['dest'];
                 }
             }
         }
 
-        return $pdf->Output($filename, $outputMode);
+        $result = new PdfCreatorResult($this->getOutputMode());
+
+        switch ($this->getOutputMode()) {
+            case static::OUTPUT_MODE_STRING:
+                $result->setFileContent($pdf->Output($filename, $outputMode));
+
+                break;
+
+            case static::OUTPUT_MODE_FILE:
+                $result->setFilePath($filename);
+                $pdf->Output($filename, $outputMode);
+
+                break;
+
+            default:
+                $pdf->Output($filename, $outputMode);
+        }
+
+        return $result;
     }
 
     public function getSupportedOutputModes(): array

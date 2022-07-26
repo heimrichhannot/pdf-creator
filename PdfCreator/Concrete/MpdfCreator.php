@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (c) 2021 Heimrich & Hannot GmbH
+ * Copyright (c) 2022 Heimrich & Hannot GmbH
  *
  * @license LGPL-3.0-or-later
  */
@@ -13,6 +13,7 @@ use HeimrichHannot\PdfCreator\AbstractPdfCreator;
 use HeimrichHannot\PdfCreator\BeforeCreateLibraryInstanceCallback;
 use HeimrichHannot\PdfCreator\BeforeOutputPdfCallback;
 use HeimrichHannot\PdfCreator\Exception\MissingDependenciesException;
+use HeimrichHannot\PdfCreator\PdfCreatorResult;
 use Mpdf\Config\ConfigVariables;
 use Mpdf\Config\FontVariables;
 use Mpdf\Mpdf;
@@ -48,10 +49,8 @@ class MpdfCreator extends AbstractPdfCreator
 
     /**
      * @throws MissingDependenciesException
-     *
-     * @return string|void
      */
-    public function render()
+    public function render(): PdfCreatorResult
     {
         static::isUsable(true);
 
@@ -66,13 +65,13 @@ class MpdfCreator extends AbstractPdfCreator
         $config = $this->applyFonts($config);
 
         if ($this->getBeforeCreateInstanceCallback()) {
-            /** @var BeforeCreateLibraryInstanceCallback $result */
-            $result = \call_user_func($this->getBeforeCreateInstanceCallback(), new BeforeCreateLibraryInstanceCallback(
+            /** @var BeforeCreateLibraryInstanceCallback $callback */
+            $callback = \call_user_func($this->getBeforeCreateInstanceCallback(), new BeforeCreateLibraryInstanceCallback(
                 static::getType(), ['config' => $config]
             ));
 
-            if ($result && isset($result->getConstructorParameters()['config'])) {
-                $config = $result->getConstructorParameters()['config'];
+            if ($callback && isset($callback->getConstructorParameters()['config'])) {
+                $config = $callback->getConstructorParameters()['config'];
             }
         }
 
@@ -98,7 +97,7 @@ class MpdfCreator extends AbstractPdfCreator
                 break;
 
             case static::OUTPUT_MODE_FILE:
-                if ($folder = $this->getFolder() && $this->getFilename()) {
+                if (($folder = $this->getFolder()) && $this->getFilename()) {
                     $filename = rtrim($folder, '/').'/'.$filename;
                 }
 
@@ -118,27 +117,35 @@ class MpdfCreator extends AbstractPdfCreator
         }
 
         if ($this->getBeforeOutputPdfCallback()) {
-            /** @var BeforeOutputPdfCallback $result */
-            $result = \call_user_func($this->getBeforeOutputPdfCallback(), new BeforeOutputPdfCallback(static::getType(), $pdf, [
+            /** @var BeforeOutputPdfCallback $callback */
+            $callback = \call_user_func($this->getBeforeOutputPdfCallback(), new BeforeOutputPdfCallback(static::getType(), $pdf, [
                 'name' => $filename,
                 'dest' => $outputMode,
             ]));
 
-            if ($result) {
-                if (isset($result->getOutputParameters()['name'])) {
-                    $filename = $result->getOutputParameters()['name'];
+            if ($callback) {
+                if (isset($callback->getOutputParameters()['name'])) {
+                    $filename = $callback->getOutputParameters()['name'];
                 }
 
-                if (isset($result->getOutputParameters()['dest'])) {
-                    $outputMode = $result->getOutputParameters()['dest'];
+                if (isset($callback->getOutputParameters()['dest'])) {
+                    $outputMode = $callback->getOutputParameters()['dest'];
                 }
             }
         }
 
+        $result = new PdfCreatorResult($this->getOutputMode());
+
         if (static::OUTPUT_MODE_STRING === $this->getOutputMode()) {
-            return $pdf->Output($filename, $outputMode);
+            $result->setFileContent($pdf->Output($filename, $outputMode));
+        } else {
+            if (static::OUTPUT_MODE_FILE === $this->getOutputMode()) {
+                $result->setFilePath($filename);
+            }
+            $pdf->Output($filename, $outputMode);
         }
-        $pdf->Output($filename, $outputMode);
+
+        return $result;
     }
 
     public function getSupportedOutputModes(): array
@@ -321,7 +328,7 @@ class MpdfCreator extends AbstractPdfCreator
                     $pdf->UseTemplate($tplIdx);
                 }
             } else {
-                trigger_error('Pdf template does not exist.', E_USER_NOTICE);
+                trigger_error('Pdf template does not exist.', \E_USER_NOTICE);
             }
         }
     }

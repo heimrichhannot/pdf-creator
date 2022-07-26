@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.   
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2022-07-26
+- Changed: [API Change] AbstractPdfCreator::render() now returns PdfCreatorResult
+- Changed: allow php 8
+- Fixed: output mode file for tcpdf and mpdf
+
 ## [0.3.3] - 2021-05-25
 - added temp file cleanup to dompdf master template support
 - added missing symfony/filesystem dependency
