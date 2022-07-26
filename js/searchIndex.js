@@ -586,6 +586,61 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/HeimrichHannot-PdfCreator-PdfCreatorFactory.html#property_types"
         },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\PdfCreatorResult",
+            "name": "PdfCreatorResult",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\PdfCreatorResult\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method___construct"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\PdfCreatorResult\u003A\u003AgetOutputMode\u0028\u0029",
+            "name": "getOutputMode",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_getOutputMode"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\PdfCreatorResult\u003A\u003AsetOutputMode\u0028\u0029",
+            "name": "setOutputMode",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_setOutputMode"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\PdfCreatorResult\u003A\u003AgetFilePath\u0028\u0029",
+            "name": "getFilePath",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_getFilePath"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\PdfCreatorResult\u003A\u003AsetFilePath\u0028\u0029",
+            "name": "setFilePath",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_setFilePath"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\PdfCreatorResult\u003A\u003AgetFileContent\u0028\u0029",
+            "name": "getFileContent",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_getFileContent"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\PdfCreatorResult\u003A\u003AsetFileContent\u0028\u0029",
+            "name": "setFileContent",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_setFileContent"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\PdfCreatorResult\u003A\u003A\u0024outputMode",
+            "name": "outputMode",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#property_outputMode"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\PdfCreatorResult\u003A\u003A\u0024filePath",
+            "name": "filePath",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#property_filePath"
+        },                {
+            "fqsen": "\\HeimrichHannot\\PdfCreator\\PdfCreatorResult\u003A\u003A\u0024fileContent",
+            "name": "fileContent",
+            "summary": "",
+            "url": "classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#property_fileContent"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",

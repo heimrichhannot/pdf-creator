@@ -90,7 +90,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    BeforeOutputPdfCallback
+    PdfCreatorResult
 
     
             <div class="phpdocumentor-element__package">
@@ -104,7 +104,7 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/BeforeOutputPdfCallback.php"><a href="files/pdfcreator-beforeoutputpdfcallback.html"><abbr title="PdfCreator/BeforeOutputPdfCallback.php">BeforeOutputPdfCallback.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/PdfCreatorResult.php"><a href="files/pdfcreator-pdfcreatorresult.html"><abbr title="PdfCreator/PdfCreatorResult.php">PdfCreatorResult.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">11</span>
 
@@ -126,66 +126,73 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#property_libraryInstance">$libraryInstance</a>
+                <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#property_fileContent">$fileContent</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: string            </span>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#property_outputParameters">$outputParameters</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#property_filePath">$filePath</a>
     <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                &nbsp;: string            </span>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#property_type">$type</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#property_outputMode">$outputMode</a>
     <span>
                 &nbsp;: string            </span>
 </dt>
 <dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#method___construct">__construct()</a>
+    <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method___construct">__construct()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#method_getLibraryInstance">getLibraryInstance()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#method_getOutputParameters">getOutputParameters()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#method_getType">getType()</a>
+    <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_getFileContent">getFileContent()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#method_setLibraryInstance">setLibraryInstance()</a>
+    <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_getFilePath">getFilePath()</a>
     <span>
-                        &nbsp;: void    </span>
+                        &nbsp;: string    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#method_setOutputParameters">setOutputParameters()</a>
+    <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_getOutputMode">getOutputMode()</a>
     <span>
-                        &nbsp;: void    </span>
+                        &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_setFileContent">setFileContent()</a>
+    <span>
+                        &nbsp;: self    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_setFilePath">setFilePath()</a>
+    <span>
+                        &nbsp;: self    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_setOutputMode">setOutputMode()</a>
+    <span>
+                        &nbsp;: self    </span>
 </dt>
 <dd></dd>
 
@@ -199,23 +206,91 @@
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="
             phpdocumentor-element
             -property
-            -protected
+            -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_libraryInstance">
-        $libraryInstance
-        <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#property_libraryInstance" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_fileContent">
+        $fileContent
+        <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#property_fileContent" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/BeforeOutputPdfCallback.php"><a href="files/pdfcreator-beforeoutputpdfcallback.html"><abbr title="PdfCreator/BeforeOutputPdfCallback.php">BeforeOutputPdfCallback.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/PdfCreatorResult.php"><a href="files/pdfcreator-pdfcreatorresult.html"><abbr title="PdfCreator/PdfCreatorResult.php">PdfCreatorResult.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">15</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$fileContent</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_filePath">
+        $filePath
+        <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#property_filePath" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/PdfCreatorResult.php"><a href="files/pdfcreator-pdfcreatorresult.html"><abbr title="PdfCreator/PdfCreatorResult.php">PdfCreatorResult.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">14</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$filePath</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_outputMode">
+        $outputMode
+        <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#property_outputMode" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/PdfCreatorResult.php"><a href="files/pdfcreator-pdfcreatorresult.html"><abbr title="PdfCreator/PdfCreatorResult.php">PdfCreatorResult.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">13</span>
 
@@ -223,79 +298,15 @@
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$libraryInstance</span>
-    </code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_outputParameters">
-        $outputParameters
-        <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#property_outputParameters" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/BeforeOutputPdfCallback.php"><a href="files/pdfcreator-beforeoutputpdfcallback.html"><abbr title="PdfCreator/BeforeOutputPdfCallback.php">BeforeOutputPdfCallback.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">17</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$outputParameters</span>
-    </code>
-
-    
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_type">
-        $type
-        <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#property_type" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/BeforeOutputPdfCallback.php"><a href="files/pdfcreator-beforeoutputpdfcallback.html"><abbr title="PdfCreator/BeforeOutputPdfCallback.php">BeforeOutputPdfCallback.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">21</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
+    <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$type</span>
+    <span class="phpdocumentor-signature__name">$outputMode</span>
     </code>
 
-    
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -304,7 +315,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -314,44 +325,28 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/BeforeOutputPdfCallback.php"><a href="files/pdfcreator-beforeoutputpdfcallback.html"><abbr title="PdfCreator/BeforeOutputPdfCallback.php">BeforeOutputPdfCallback.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/PdfCreatorResult.php"><a href="files/pdfcreator-pdfcreatorresult.html"><abbr title="PdfCreator/PdfCreatorResult.php">PdfCreatorResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$libraryInstance</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$outputParameters</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$outputMode</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$type</span>
+                <span class="phpdocumentor-signature__argument__name">$outputMode</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$libraryInstance</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$outputParameters</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
@@ -372,86 +367,21 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getLibraryInstance">
-        getLibraryInstance()
-        <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#method_getLibraryInstance" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getFileContent">
+        getFileContent()
+        <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_getFileContent" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/BeforeOutputPdfCallback.php"><a href="files/pdfcreator-beforeoutputpdfcallback.html"><abbr title="PdfCreator/BeforeOutputPdfCallback.php">BeforeOutputPdfCallback.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/PdfCreatorResult.php"><a href="files/pdfcreator-pdfcreatorresult.html"><abbr title="PdfCreator/PdfCreatorResult.php">PdfCreatorResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getLibraryInstance</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getOutputParameters">
-        getOutputParameters()
-        <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#method_getOutputParameters" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/BeforeOutputPdfCallback.php"><a href="files/pdfcreator-beforeoutputpdfcallback.html"><abbr title="PdfCreator/BeforeOutputPdfCallback.php">BeforeOutputPdfCallback.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">51</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getOutputParameters</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getType">
-        getType()
-        <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#method_getType" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/BeforeOutputPdfCallback.php"><a href="files/pdfcreator-beforeoutputpdfcallback.html"><abbr title="PdfCreator/BeforeOutputPdfCallback.php">BeforeOutputPdfCallback.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">30</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getType</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                <span class="phpdocumentor-signature__name">getFileContent</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -470,38 +400,29 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_setLibraryInstance">
-        setLibraryInstance()
-        <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#method_setLibraryInstance" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getFilePath">
+        getFilePath()
+        <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_getFilePath" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/BeforeOutputPdfCallback.php"><a href="files/pdfcreator-beforeoutputpdfcallback.html"><abbr title="PdfCreator/BeforeOutputPdfCallback.php">BeforeOutputPdfCallback.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/PdfCreatorResult.php"><a href="files/pdfcreator-pdfcreatorresult.html"><abbr title="PdfCreator/PdfCreatorResult.php">PdfCreatorResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setLibraryInstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$libraryInstance</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">getFilePath</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
 
     
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$libraryInstance</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
         
     
@@ -512,29 +433,62 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_setOutputParameters">
-        setOutputParameters()
-        <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#method_setOutputParameters" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getOutputMode">
+        getOutputMode()
+        <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_getOutputMode" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/BeforeOutputPdfCallback.php"><a href="files/pdfcreator-beforeoutputpdfcallback.html"><abbr title="PdfCreator/BeforeOutputPdfCallback.php">BeforeOutputPdfCallback.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/PdfCreatorResult.php"><a href="files/pdfcreator-pdfcreatorresult.html"><abbr title="PdfCreator/PdfCreatorResult.php">PdfCreatorResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setOutputParameters</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$outputParameters</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">getOutputMode</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setFileContent">
+        setFileContent()
+        <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_setFileContent" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/PdfCreatorResult.php"><a href="files/pdfcreator-pdfcreatorresult.html"><abbr title="PdfCreator/PdfCreatorResult.php">PdfCreatorResult.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">51</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">setFileContent</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fileContent</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$outputParameters</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                <span class="phpdocumentor-signature__argument__name">$fileContent</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -545,7 +499,95 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">self</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setFilePath">
+        setFilePath()
+        <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_setFilePath" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/PdfCreatorResult.php"><a href="files/pdfcreator-pdfcreatorresult.html"><abbr title="PdfCreator/PdfCreatorResult.php">PdfCreatorResult.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">39</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">setFilePath</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filePath</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$filePath</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">self</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setOutputMode">
+        setOutputMode()
+        <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#method_setOutputMode" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="PdfCreator/PdfCreatorResult.php"><a href="files/pdfcreator-pdfcreatorresult.html"><abbr title="PdfCreator/PdfCreatorResult.php">PdfCreatorResult.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">27</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">setOutputMode</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$outputMode</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$outputMode</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">self</span>
             &mdash;
         
     
@@ -628,7 +670,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/HeimrichHannot-PdfCreator-BeforeOutputPdfCallback.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/HeimrichHannot-PdfCreator-PdfCreatorResult.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
