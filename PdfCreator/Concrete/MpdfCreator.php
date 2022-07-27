@@ -228,27 +228,14 @@ class MpdfCreator extends AbstractPdfCreator
                 $dirs[] = $file['dirname'];
                 $fontStyle = 'R';
 
-                switch ($font['style']) {
-                    case static::FONT_STYLE_REGUALAR:
-                        $fontStyle = 'R';
-
-                        break;
-
-                    case static::FONT_STYLE_BOLD:
-                        $fontStyle = 'B';
-
-                        break;
-
-                    case static::FONT_STYLE_ITALIC:
-                        $fontStyle = 'I';
-
-                        break;
-
-                    case static::FONT_STYLE_BOLDITALIC:
-                        $fontStyle = 'BI';
-
-                        break;
+                if (static::FONT_STYLE_BOLD === $font['weight']) {
+                    $fontStyle = 'B';
+                } elseif (static::FONT_STYLE_ITALIC === $font['style']) {
+                    $fontStyle = 'I';
+                } elseif ((static::FONT_STYLE_BOLD === $font['weight']) && (static::FONT_STYLE_ITALIC === $font['style'])) {
+                    $fontStyle = 'BI';
                 }
+
                 $families[$slugGenerator->generate($font['family'])][$fontStyle] = $file['basename'];
             }
 

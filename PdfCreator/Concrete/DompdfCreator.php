@@ -146,6 +146,11 @@ class DompdfCreator extends AbstractPdfCreator
 
                 // no break
             case static::OUTPUT_MODE_FILE:
+                $output = $dompdf->output($renderOptions);
+                $path = $this->getFolder().\DIRECTORY_SEPARATOR.$this->getFilename();
+                file_put_contents($path, $output);
+                $result->setFilePath($path);
+
                 // @ToDo (https://ourcodeworld.com/articles/read/799/how-to-create-a-pdf-from-html-in-symfony-4-using-dompdf)
                 // should then also be covered in applyMasterTemplate
         }
@@ -159,6 +164,7 @@ class DompdfCreator extends AbstractPdfCreator
             self::OUTPUT_MODE_INLINE,
             self::OUTPUT_MODE_DOWNLOAD,
             self::OUTPUT_MODE_STRING,
+            self::OUTPUT_MODE_FILE,
         ];
     }
 
@@ -207,34 +213,36 @@ class DompdfCreator extends AbstractPdfCreator
             $pdf->useTemplate($currentPage);
         }
 
+        $result = new PdfCreatorResult($this->getOutputMode());
+
         switch ($this->getOutputMode()) {
             case static::OUTPUT_MODE_STRING:
-                $outputMode = 'S';
+                $result->setFileContent($pdf->Output($filename, 'S'));
 
                 break;
 
-//            case static::OUTPUT_MODE_FILE:
-//                if ($folder = $this->getFolder() && $this->getFilename()) {
-//                    $filename = rtrim($folder, \DIRECTORY_SEPARATOR).\DIRECTORY_SEPARATOR.$filename;
-//                }
-//
-//                $outputMode = 'F';
-//
-//                break;
+            case static::OUTPUT_MODE_FILE:
+                if (($folder = $this->getFolder()) && $this->getFilename()) {
+                    $filename = rtrim($folder, \DIRECTORY_SEPARATOR).\DIRECTORY_SEPARATOR.$filename;
+                }
+                $pdf->Output($filename, 'F');
+                $result->setFilePath($filename);
+
+                break;
 
             case static::OUTPUT_MODE_DOWNLOAD:
-                $outputMode = 'D';
+                $pdf->Output($filename, 'D');
 
                 break;
 
             default:
             case static::OUTPUT_MODE_INLINE:
-                $outputMode = 'I';
+                $pdf->Output($filename, 'I');
 
                 break;
         }
         $filesystem->remove($tmpFilename);
 
-        return $pdf->Output($this->getFilename(), $outputMode);
+        return $result;
     }
 }
