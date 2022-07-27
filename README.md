@@ -91,7 +91,30 @@ $pdf->setBeforeOutputPdfCallback(function (BeforeOutputPdfCallback $callbackData
     $parameters['name'] = 'custom_'.$pdf->getFilename();
     $callbackData->setOutputParameters($parameters);
 });
+```
 
+### Use return value
+
+The render method return an `PdfCreatorResult` instance. It contains the output 
+mode and filepath or filecontent for corresponding output modes.
+
+```php
+use HeimrichHannot\PdfCreator\Concrete\DompdfCreator;
+use HeimrichHannot\PdfCreator\PdfCreatorFactory;
+
+$pdf = PdfCreatorFactory::createInstance(DompdfCreator::getType());
+$result = $pdf->setOutputMode($pdf::OUTPUT_MODE_FILE)
+    // ...
+    ->render()
+;
+$filepath = $result->getFilePath();
+
+$pdf = PdfCreatorFactory::createInstance(DompdfCreator::getType());
+$result = $pdf->setOutputMode($pdf::OUTPUT_MODE_STRING)
+    // ...
+    ->render()
+;
+$filepath = $result->getFileContent();
 ```
 
 ## Documentation
