@@ -42,13 +42,13 @@ We recommend installing this library with composer:
     composer require heimrichhannot/pdf-creator
 
 You also need to install the pdf library, you want to use this bundle with:
-- Dompdf:
-  - `"dompdf/dompdf": "^1.0"`
+- Dompdf (version 1 to 3 are supported):
+  - `"dompdf/dompdf": "^3.0"`
   - if you want to use master templates in Dompdf, you also need FPDI and TCPDF:    
     - `"tecnickcom/tcpdf": "^6.3"`
     - `"setasign/fpdi": "^2.3"`
-- mPDF
-  - `"mpdf/mpdf": "^8.0"` (version ^7.0 also supported)
+- mPDF (version 7 and 8 are supported):
+  - `"mpdf/mpdf": "^8.0"`
 - TCPDF
   - `"tecnickcom/tcpdf": "^6.3"`
   - if you want to use master templates in TCPDF, you also need FPDI:    

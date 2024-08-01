@@ -172,7 +172,7 @@ class DompdfCreator extends AbstractPdfCreator
     {
         $support = [];
 
-        if (class_exists('setasign\Fpdi\Tcpdf\Fpdi')) {
+        if (class_exists(\TCPDF::class) && class_exists(Fpdi::class)) {
             $support[] = static::SUPPORT_MASTERTEMPLATE;
         }
 
