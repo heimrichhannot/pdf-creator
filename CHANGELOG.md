@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.   
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.2] - 2024-08-01
+- Changed: widen dependency requirements
+
 ## [0.4.1] - 2022-07-27
 - Added: DompdfCreator now supports output mode file
 - Fixed: DompdfCreator mastertemplate invalid return value
