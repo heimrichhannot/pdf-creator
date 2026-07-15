@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.   
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.4] - 2026-07-15
+- Changed: allow symfony/filesystem 7 and 8
+
 ## [0.4.3] - 2024-08-01
 - Fixed: possible exception in DompdfCreator
 
